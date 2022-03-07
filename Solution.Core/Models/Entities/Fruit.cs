@@ -14,30 +14,22 @@ namespace Solution.Core.Models.Entities
         {
         }
 
-        public Fruit(int id, string name, string imageLink, string club, string birthday, int weight, double height, 
-            string description, int NutritionInfoId)
+        public Fruit(int id, string name, string sourceUrl,string description, int nutritionInfoId)
         {
             Id = id;
             Name = name;
-            ImageLink = imageLink;
-            Club = club;
-            Birthday = birthday;
-            Weight = weight;
-            Height = height;
+            SourceUrl = sourceUrl;
             Description = description;
-            NutritionInfoId = NutritionInfoId;
+            NutritionInfoId = nutritionInfoId;
         }
 
         public Fruit( FruitRequest Fruit)
         {
             Name = Fruit.Name;
-            ImageLink = Fruit.ImageLink;
-            Club = Fruit.Club;
-            Birthday = Fruit.Birthday;
-            Weight = Fruit.Weight;
-            Height = Fruit.Height;
+            SourceUrl = Fruit.SourceUrl;
             Description = Fruit.Description;
             NutritionInfoId = Fruit.NutritionInfoId;
+
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Solution.Middleware
     {
         public static void AddDependencyInjection(this IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(options =>  options.UseSqlServer("Server=.\\SQLEXPRESS;Database=AoVDb;Trusted_Connection=True"));
+            services.AddDbContext<AppDbContext>(options =>  options.UseSqlServer("Server=.\\SQLEXPRESS;Database=FruitsDb;Trusted_Connection=True"));
 
             services.AddTransient<IFruitService, FruitService>();
             services.AddTransient<IFruitRepository, FruitRepository>();

@@ -11,16 +11,33 @@ namespace Solution.Core.Models.Entities
         public int Id { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string Amount { get; set; }
+
+        [Required]
+        public string TotalCalories { get; set; }
+
+        [Required]
+        public string Carbohydrate { get; set; }
+
+        [Required]
+        public string Protein { get; set; }
+
+        [Required]
+        public string Fat { get; set; }
+
 
         public NutritionInfo()
         {
         }
 
-        public NutritionInfo(int id, string name)
+        public NutritionInfo(int id, string amount, string totalCalories, string carbohydrate, string protein, string fat)
         {
             Id = id;
-            Name = name;
+            Amount = amount;
+            TotalCalories = totalCalories;
+            Carbohydrate = carbohydrate;
+            Protein = protein;
+            Fat = fat;
         }
     }
 }

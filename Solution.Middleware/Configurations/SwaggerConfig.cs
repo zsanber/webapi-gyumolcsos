@@ -13,7 +13,7 @@ namespace Solution.Middleware.Configurations
         {
             services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "AoV", Version = "v1" });
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "FruitsApplication", Version = "v1" });
 
                 string xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 string xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
@@ -42,7 +42,7 @@ namespace Solution.Middleware.Configurations
 
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint($"/swagger/v1/swagger.json", "Amozons of Volleyball");
+                options.SwaggerEndpoint($"/swagger/v1/swagger.json", "Fruits of Eden :) ");
             });
         }
     }

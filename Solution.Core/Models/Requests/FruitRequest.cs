@@ -13,23 +13,7 @@ namespace Solution.Core.Models.Requests
         [Required]
         [Url]
         [StringLength(2048)]
-        public string ImageLink { get; set; }
-        
-        [Required]
-        [StringLength(255)]
-        public string Club { get; set; }
-
-        [Required]
-        [StringLength(255)]
-        public string Birthday { get; set; }
-
-        [Required]
-        [Range(0, 100)]
-        public int Weight { get; set; }
-
-        [Required]
-        [Range(1.5, 2.5)]
-        public double Height { get; set; }
+        public string SourceUrl { get; set; }
 
         [Required]
         [StringLength(4096)]
@@ -44,14 +28,10 @@ namespace Solution.Core.Models.Requests
         {
         }
 
-        public FruitRequest(string name, string imageLink, string club, string birthday, int weight, double height, string description)
+        public FruitRequest(string name, string sourceUrl, string description)
         {
             Name = name;
-            ImageLink = imageLink;
-            Club = club;
-            Birthday = birthday;
-            Weight = weight;
-            Height = height;
+            SourceUrl = sourceUrl;
             Description = description;
         }
     }

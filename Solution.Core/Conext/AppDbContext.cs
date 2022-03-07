@@ -22,7 +22,7 @@ namespace Solution.Core.Conext
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(LocalDB)\\MSSQLLocalDB;Database=Fruits;Trusted_Connection=True");
+            optionsBuilder.UseSqlServer("Server=(LocalDB)\\MSSQLLocalDB;Database=FruitsDb;Trusted_Connection=True");
             optionsBuilder.UseLazyLoadingProxies();
         }
 
