@@ -5,16 +5,16 @@ using Solution.Core.Models.Entities;
 
 namespace Solution.Repository
 {
-    public class PlayerRepository : BaseRepository<Player>, IPlayerRepository
+    public class FruitRepository : BaseRepository<Fruit>, IFruitRepository
     {
-        public PlayerRepository(AppDbContext context) : base(context)
+        public FruitRepository(AppDbContext context) : base(context)
         {
         }
 
-        public override  async Task<List<Player>> GetAllAsync()
+        public override  async Task<List<Fruit>> GetAllAsync()
         {
-            return await _context.Set<Player>()
-                                                     .Include(x => x.Position)
+            return await _context.Set<Fruit>()
+                                                     .Include(x => x.NutritionInfo)
                                                      .AsNoTracking()
                                                      .ToListAsync();
         }

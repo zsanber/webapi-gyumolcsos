@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Solution.Core.Models.Requests
 {
-    public class PlayerRequest
+    public class FruitRequest
     {
         [Required(ErrorMessage = "A nevet  kötelező megadni.")]
         [StringLength(255)]
@@ -36,15 +36,15 @@ namespace Solution.Core.Models.Requests
         public string Description { get; set; }
 
         [Required]
-        [ForeignKey("Position")]
-        public int PositionId { get; set; }
-        public virtual Position Position { get; set; }
+        [ForeignKey("NutritionInfo")]
+        public int NutritionInfoId { get; set; }
+        public virtual NutritionInfo NutritionInfo { get; set; }
 
-        public PlayerRequest()
+        public FruitRequest()
         {
         }
 
-        public PlayerRequest(string name, string imageLink, string club, string birthday, int weight, double height, string description)
+        public FruitRequest(string name, string imageLink, string club, string birthday, int weight, double height, string description)
         {
             Name = name;
             ImageLink = imageLink;

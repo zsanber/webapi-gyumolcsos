@@ -2,7 +2,7 @@
 
 namespace Solution.Core.Interfaces.IRepositories
 {
-    public interface IPositionRepository : IBaseRepository<Position>
+    public interface INutritionInfoRepository : IBaseRepository<NutritionInfo>
     {
     }
 }

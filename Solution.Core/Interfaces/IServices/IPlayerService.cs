@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Solution.Core.Interfaces.IServices
 {
-    public interface IPlayerService
+    public interface IFruitService
     {
-        Task<ServiceResponse<List<Player>>> GetAllAsync();
-        Task<ServiceResponse<Player>> GetAsync(int id);
-        Task<ServiceResponse<List<Player>>> PageAsync(int page = 0);
+        Task<ServiceResponse<List<Fruit>>> GetAllAsync();
+        Task<ServiceResponse<Fruit>> GetAsync(int id);
+        Task<ServiceResponse<List<Fruit>>> PageAsync(int page = 0);
         Task<ServiceResponse> DeleteAsync(int id);
-        Task<ServiceResponse<Player>> CreateAsync(PlayerRequest requestParam);
-        Task<ServiceResponse<Player>> UpdateAsync(Player requestParam);
+        Task<ServiceResponse<Fruit>> CreateAsync(FruitRequest requestParam);
+        Task<ServiceResponse<Fruit>> UpdateAsync(Fruit requestParam);
     }
 }

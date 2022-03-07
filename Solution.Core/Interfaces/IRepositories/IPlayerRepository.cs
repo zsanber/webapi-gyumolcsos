@@ -2,7 +2,7 @@
 
 namespace Solution.Core.Interfaces.IRepositories
 {
-    public interface IPlayerRepository : IBaseRepository<Player>
+    public interface IFruitRepository : IBaseRepository<Fruit>
     {
     }
 }

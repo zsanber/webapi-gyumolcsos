@@ -4,9 +4,9 @@ using Solution.Core.Models.Entities;
 
 namespace Solution.Repository
 {
-    public class PositionRepository : BaseRepository<Position>, IPositionRepository
+    public class NutritionInfoRepository : BaseRepository<NutritionInfo>, INutritionInfoRepository
     {
-        public PositionRepository(AppDbContext context) : base(context)
+        public NutritionInfoRepository(AppDbContext context) : base(context)
         {
         }
     }

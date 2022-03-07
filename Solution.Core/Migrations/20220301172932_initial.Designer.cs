@@ -23,7 +23,7 @@ namespace Solution.Core.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Solution.Core.Models.Entities.Player", b =>
+            modelBuilder.Entity("Solution.Core.Models.Entities.Fruit", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -59,7 +59,7 @@ namespace Solution.Core.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<int>("PositionId")
+                    b.Property<int>("NutritionInfoId")
                         .HasColumnType("int");
 
                     b.Property<int>("Weight")
@@ -67,9 +67,9 @@ namespace Solution.Core.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PositionId");
+                    b.HasIndex("NutritionInfoId");
 
-                    b.ToTable("Players");
+                    b.ToTable("Fruits");
 
                     b.HasData(
                         new
@@ -77,11 +77,11 @@ namespace Solution.Core.Migrations
                             Id = 1,
                             Birthday = "1992.05.03",
                             Club = "FATUM Nyíregyháza",
-                            Description = "Nikola Radosová (born 3 May 1992) is a Slovak female volleyball player. She is part of the Slovakia women's national volleyball team. She competed at the 2019 Women's European Volleyball Championship.",
+                            Description = "Nikola Radosová (born 3 May 1992) is a Slovak female volleyball Fruit. She is part of the Slovakia women's national volleyball team. She competed at the 2019 Women's European Volleyball Championship.",
                             Height = 1.8600000000000001,
                             ImageLink = "https://t.aimg.sk/magaziny/jQg6qSKSS-6QkmTfMGAKDg~Volejbalistka-Nikola-Radosov.jpg?t=LzB4ODU6MTA2N3g2ODUvZml0LWluLzE2MDB4OTAw&h=Wga6PqMq3hI4_zELe2x9rA&e=2145916800&v=3",
                             Name = "Nikola Radosová",
-                            PositionId = 4,
+                            NutritionInfoId = 4,
                             Weight = 66
                         },
                         new
@@ -93,7 +93,7 @@ namespace Solution.Core.Migrations
                             Height = 179.0,
                             ImageLink = "https://1mcmvolley.hu/wp-content/uploads/2020/09//2019.10.24-2.jpg",
                             Name = "Tanja Matic",
-                            PositionId = 4,
+                            NutritionInfoId = 4,
                             Weight = 57
                         },
                         new
@@ -105,7 +105,7 @@ namespace Solution.Core.Migrations
                             Height = 188.0,
                             ImageLink = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBrypz5TGmd6zLI19niR_UwuO_uYOKmBbRxg&usqp=CAU",
                             Name = "Katarzyna Skowrońska-Dolata",
-                            PositionId = 4,
+                            NutritionInfoId = 4,
                             Weight = 75
                         },
                         new
@@ -117,7 +117,7 @@ namespace Solution.Core.Migrations
                             Height = 1.78,
                             ImageLink = "https://upload.wikimedia.org/wikipedia/commons/6/68/Anna_Werbli%C5%84ska_%2812194794495%29.jpg",
                             Name = "Anna Werblińska",
-                            PositionId = 4,
+                            NutritionInfoId = 4,
                             Weight = 69
                         },
                         new
@@ -129,7 +129,7 @@ namespace Solution.Core.Migrations
                             Height = 1.8500000000000001,
                             ImageLink = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Bednarek-Pekin_2008.jpg/800px-Bednarek-Pekin_2008.jpg",
                             Name = "Agnieszka Bednarek-Kasza",
-                            PositionId = 2,
+                            NutritionInfoId = 2,
                             Weight = 69
                         },
                         new
@@ -141,7 +141,7 @@ namespace Solution.Core.Migrations
                             Height = 1.8500000000000001,
                             ImageLink = "https://dl.siatkarskaliga.pl/68831/inline/scalecrop=400x800/9c119d/Eleonora-Dziekiewicz.jpg",
                             Name = "Eleonora Dziękiewicz",
-                            PositionId = 2,
+                            NutritionInfoId = 2,
                             Weight = 78
                         },
                         new
@@ -153,7 +153,7 @@ namespace Solution.Core.Migrations
                             Height = 1.8400000000000001,
                             ImageLink = "https://i.ytimg.com/vi/LjRmWzwz-nk/hqdefault.jpg",
                             Name = "Francesca Piccinini",
-                            PositionId = 4,
+                            NutritionInfoId = 4,
                             Weight = 62
                         },
                         new
@@ -165,7 +165,7 @@ namespace Solution.Core.Migrations
                             Height = 1.8600000000000001,
                             ImageLink = "https://alchetron.com/cdn/jaqueline-carvalho-12811a8c-5f68-4099-8345-7d8a58f65dd-resize-750.jpeg",
                             Name = "Jaqueline Carvalho",
-                            PositionId = 4,
+                            NutritionInfoId = 4,
                             Weight = 70
                         },
                         new
@@ -177,7 +177,7 @@ namespace Solution.Core.Migrations
                             Height = 1.8500000000000001,
                             ImageLink = "https://s21466.pcdn.co/wp-content/uploads/2018/10/YelyzavetaSamadovaofAzerbaijanspikesthebal-e1539604875126.jpg",
                             Name = "Yelyzaveta Samadova",
-                            PositionId = 4,
+                            NutritionInfoId = 4,
                             Weight = 71
                         },
                         new
@@ -189,7 +189,7 @@ namespace Solution.Core.Migrations
                             Height = 1.8799999999999999,
                             ImageLink = "https://i.ytimg.com/vi/EU3075haQeA/maxresdefault.jpg",
                             Name = "Eda Erdem Dündar",
-                            PositionId = 5,
+                            NutritionInfoId = 5,
                             Weight = 73
                         },
                         new
@@ -197,11 +197,11 @@ namespace Solution.Core.Migrations
                             Id = 11,
                             Birthday = "1998.02.19.",
                             Club = "UCLA",
-                            Description = "Jamie Robbins is one of the most beautiful volleyball players. She plays on the UCLA volleyball team. Her position is an outside hitter. Although we can’t consider her as a professional volleyball player, she is pretty popular with over 120k Instagram followers. ",
+                            Description = "Jamie Robbins is one of the most beautiful volleyball Fruits. She plays on the UCLA volleyball team. Her NutritionInfo is an outside hitter. Although we can’t consider her as a professional volleyball Fruit, she is pretty popular with over 120k Instagram followers. ",
                             Height = 1.8500000000000001,
                             ImageLink = "https://i1.wp.com/tstreetvolleyball.com/wp-content/uploads/2019/05/web-18-Shawn-Robbins-Jaime-8-HL5A8412-118-250x350.jpg?fit=250%2C350&ssl=1",
                             Name = "Jamie Robbins",
-                            PositionId = 4,
+                            NutritionInfoId = 4,
                             Weight = 61
                         },
                         new
@@ -213,7 +213,7 @@ namespace Solution.Core.Migrations
                             Height = 1.97,
                             ImageLink = "https://s.yimg.com/ny/api/res/1.2/rzzeYSjj.dK9f9Sj_JHBnQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTIwMDA7aD0xMzMz/https://s.yimg.com/os/creatr-uploaded-images/2021-08/beb34af0-f434-11eb-bd5d-8a19df83047c",
                             Name = "Zehra Güneş",
-                            PositionId = 2,
+                            NutritionInfoId = 2,
                             Weight = 88
                         },
                         new
@@ -225,7 +225,7 @@ namespace Solution.Core.Migrations
                             Height = 1.8500000000000001,
                             ImageLink = "https://cdn.nwmgroups.hu/s/img/i/2201//20220105klara-peric-roplabda.jpg",
                             Name = "Klara Perić",
-                            PositionId = 4,
+                            NutritionInfoId = 4,
                             Weight = 71
                         },
                         new
@@ -237,7 +237,7 @@ namespace Solution.Core.Migrations
                             Height = 167.0,
                             ImageLink = "https://ocdn.eu/pulscms-transforms/1/yqXk9kqTURBXy8yYWQxYWVjMzQ2MWQ5OTkxZjE3YmNmMjFhMjFlYjhkMC5qcGVnk5UDAcyBzQu3zQaWkwmmZTk5N2EyBpMFzQSwzQJ2gaEwAQ/maria-stenzel.jpg",
                             Name = "Maria Stenzel",
-                            PositionId = 4,
+                            NutritionInfoId = 4,
                             Weight = 63
                         },
                         new
@@ -249,7 +249,7 @@ namespace Solution.Core.Migrations
                             Height = 1.8100000000000001,
                             ImageLink = "https://i.redd.it/smql3twwyxf61.jpg",
                             Name = "Mariana Costa",
-                            PositionId = 3,
+                            NutritionInfoId = 3,
                             Weight = 75
                         },
                         new
@@ -261,7 +261,7 @@ namespace Solution.Core.Migrations
                             Height = 1.8799999999999999,
                             ImageLink = "https://www.ilawjournals.com/wp-content/uploads/2021/07/Samantha-Bricio.jpg",
                             Name = "Samantha Bricio",
-                            PositionId = 5,
+                            NutritionInfoId = 5,
                             Weight = 58
                         },
                         new
@@ -269,11 +269,11 @@ namespace Solution.Core.Migrations
                             Id = 17,
                             Birthday = "1995.01.06",
                             Club = "Telekom Baku",
-                            Description = "Winifer María Fernández Pérez (born 6 January 1995) is a Dominican female volleyball player. With her club Mirador she competed at the 2015 FIVB Club World Championship. She became well known after a video and later some photos of her playing and training, and personal photos of her--some of them fake--went viral in July 2016. ",
+                            Description = "Winifer María Fernández Pérez (born 6 January 1995) is a Dominican female volleyball Fruit. With her club Mirador she competed at the 2015 FIVB Club World Championship. She became well known after a video and later some photos of her playing and training, and personal photos of her--some of them fake--went viral in July 2016. ",
                             Height = 1.6899999999999999,
                             ImageLink = "https://www.ilawjournals.com/wp-content/uploads/2021/07/Samantha-Bricio.jpg",
                             Name = "Winifer Fernández",
-                            PositionId = 2,
+                            NutritionInfoId = 2,
                             Weight = 62
                         },
                         new
@@ -285,7 +285,7 @@ namespace Solution.Core.Migrations
                             Height = 1.8899999999999999,
                             ImageLink = "https://worldofvolley.com/wp-content/uploads/2021/05/unnamed-file-12921.jpg",
                             Name = "Nataliya Goncharova",
-                            PositionId = 4,
+                            NutritionInfoId = 4,
                             Weight = 75
                         },
                         new
@@ -297,7 +297,7 @@ namespace Solution.Core.Migrations
                             Height = 1.9099999999999999,
                             ImageLink = "https://i.pinimg.com/736x/5c/2a/29/5c2a2996ce6e78d5d97245411c15caef.jpg",
                             Name = "Louisa Lippmann",
-                            PositionId = 4,
+                            NutritionInfoId = 4,
                             Weight = 74
                         },
                         new
@@ -307,14 +307,14 @@ namespace Solution.Core.Migrations
                             Club = "Bayamón",
                             Description = "Vilmarie Mojica Puerto Rico-i röplabdázó, aki a női válogatott csapatkapitánya volt a 2008-as japán olimpiai kvalifikációs tornán. Ott a csapat a nyolcadik és az utolsó helyen végzett, miután vadkártyát kapott az eseményre, miután Peru és Kenya visszalépett.",
                             Height = 1.8,
-                            ImageLink = "https://volleybox.net/media/upload/players/1430051555SFXh6.jpg",
+                            ImageLink = "https://volleybox.net/media/upload/Fruits/1430051555SFXh6.jpg",
                             Name = "Vilmarie Mojica",
-                            PositionId = 1,
+                            NutritionInfoId = 1,
                             Weight = 63
                         });
                 });
 
-            modelBuilder.Entity("Solution.Core.Models.Entities.Position", b =>
+            modelBuilder.Entity("Solution.Core.Models.Entities.NutritionInfo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -328,7 +328,7 @@ namespace Solution.Core.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Position");
+                    b.ToTable("NutritionInfo");
 
                     b.HasData(
                         new
@@ -358,15 +358,15 @@ namespace Solution.Core.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Solution.Core.Models.Entities.Player", b =>
+            modelBuilder.Entity("Solution.Core.Models.Entities.Fruit", b =>
                 {
-                    b.HasOne("Solution.Core.Models.Entities.Position", "Position")
+                    b.HasOne("Solution.Core.Models.Entities.NutritionInfo", "NutritionInfo")
                         .WithMany()
-                        .HasForeignKey("PositionId")
+                        .HasForeignKey("NutritionInfoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Position");
+                    b.Navigation("NutritionInfo");
                 });
 #pragma warning restore 612, 618
         }

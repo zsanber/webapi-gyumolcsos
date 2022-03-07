@@ -15,24 +15,24 @@ using System.Threading.Tasks;
 namespace Solution.WebAPI.Controller
 {
     [ApiController]
-    public class PlayerController : ControllerBase
+    public class FruitController : ControllerBase
     {
-        private readonly IPlayerService _playerService;
+        private readonly IFruitService _FruitService;
 
-        public PlayerController(IPlayerService playerService)
+        public FruitController(IFruitService FruitService)
         {
-            _playerService = playerService;
+            _FruitService = FruitService;
         }
 
         [HttpGet]
-        [Route("/api/player/get-all")]
+        [Route("/api/Fruit/get-all")]
         [SwaggerOperation(OperationId = "getAll")]
         [Produces("application/json")]
-        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<Player>))]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<Fruit>))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<List<Player>> GetAll()
+        public async Task<List<Fruit>> GetAll()
         {
-            ServiceResponse<List<Player>> request = await _playerService.GetAllAsync();
+            ServiceResponse<List<Fruit>> request = await _FruitService.GetAllAsync();
 
             if(request.HasError)
             {
@@ -43,14 +43,14 @@ namespace Solution.WebAPI.Controller
         }
 
         [HttpGet]
-        [Route("/api/player/get/{id}")]
+        [Route("/api/Fruit/get/{id}")]
         [SwaggerOperation(OperationId = "get")]
         [Produces("application/json")]
-        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(Player))]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(Fruit))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<Player> Get([FromRoute][Required] int id)
+        public async Task<Fruit> Get([FromRoute][Required] int id)
         {
-            ServiceResponse<Player> request = await _playerService.GetAsync(id);
+            ServiceResponse<Fruit> request = await _FruitService.GetAsync(id);
 
             if (request.HasError)
             {
@@ -61,14 +61,14 @@ namespace Solution.WebAPI.Controller
         }
 
         [HttpGet]
-        [Route("/api/player/page/{page}")]
+        [Route("/api/Fruit/page/{page}")]
         [SwaggerOperation(OperationId = "page")]
         [Produces("application/json")]
-        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<Player>))]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<Fruit>))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<List<Player>> Page([FromRoute][Required] int page = 0)
+        public async Task<List<Fruit>> Page([FromRoute][Required] int page = 0)
         {
-            ServiceResponse<List<Player>> request = await _playerService.PageAsync(page);
+            ServiceResponse<List<Fruit>> request = await _FruitService.PageAsync(page);
 
             if (request.HasError)
             {
@@ -79,14 +79,14 @@ namespace Solution.WebAPI.Controller
         }
 
         [HttpDelete]
-        [Route("/api/player/delete/{id}")]
+        [Route("/api/Fruit/delete/{id}")]
         [SwaggerOperation(OperationId = "delete")]
         [Produces("application/json")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(bool))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<bool> Delete([FromRoute][Required] int id)
         {
-            ServiceResponse request = await _playerService.DeleteAsync(id);
+            ServiceResponse request = await _FruitService.DeleteAsync(id);
 
             if (request.HasError)
             {
@@ -97,14 +97,14 @@ namespace Solution.WebAPI.Controller
         }
 
         [HttpPost]
-        [Route("/api/player/create")]
+        [Route("/api/Fruit/create")]
         [SwaggerOperation(OperationId = "create")]
         [Produces("application/json")]
-        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(Player))]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(Fruit))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<Player> Create([FromBody][Required] PlayerRequest requestParam)
+        public async Task<Fruit> Create([FromBody][Required] FruitRequest requestParam)
         {
-            ServiceResponse<Player> request = await _playerService.CreateAsync(requestParam);
+            ServiceResponse<Fruit> request = await _FruitService.CreateAsync(requestParam);
 
             if (request.HasError)
             {
@@ -115,14 +115,14 @@ namespace Solution.WebAPI.Controller
         }
 
         [HttpPut]
-        [Route("/api/player/update")]
+        [Route("/api/Fruit/update")]
         [SwaggerOperation(OperationId = "update")]
         [Produces("application/json")]
-        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(Player))]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(Fruit))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<Player> Update([FromBody][Required] Player requestParam)
+        public async Task<Fruit> Update([FromBody][Required] Fruit requestParam)
         {
-            ServiceResponse<Player> request = await _playerService.UpdateAsync(requestParam);
+            ServiceResponse<Fruit> request = await _FruitService.UpdateAsync(requestParam);
 
             if (request.HasError)
             {

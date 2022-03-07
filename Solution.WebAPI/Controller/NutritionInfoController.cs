@@ -12,24 +12,24 @@ using System.Threading.Tasks;
 namespace Solution.WebAPI.Controller
 {
     [ApiController]
-    public class PositionController : ControllerBase
+    public class NutritionInfoController : ControllerBase
     {
-        private readonly IPositionService _positionService;
+        private readonly INutritionInfoService _NutritionInfoService;
 
-        public PositionController(IPositionService positionService)
+        public NutritionInfoController(INutritionInfoService NutritionInfoService)
         {
-            _positionService = positionService;
+            _NutritionInfoService = NutritionInfoService;
         }
 
         [HttpGet]
         [Route("/api/postions/get-all")]
         [SwaggerOperation(OperationId = "getAll")]
         [Produces("application/json")]
-        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<Position>))]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<NutritionInfo>))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<List<Position>> GetAll()
+        public async Task<List<NutritionInfo>> GetAll()
         {
-            ServiceResponse<List<Position>> request = await _positionService.GetAllAsync();
+            ServiceResponse<List<NutritionInfo>> request = await _NutritionInfoService.GetAllAsync();
 
             if (request.HasError)
             {

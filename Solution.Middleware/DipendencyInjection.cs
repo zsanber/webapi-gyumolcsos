@@ -19,11 +19,11 @@ namespace Solution.Middleware
         {
             services.AddDbContext<AppDbContext>(options =>  options.UseSqlServer("Server=.\\SQLEXPRESS;Database=AoVDb;Trusted_Connection=True"));
 
-            services.AddTransient<IPlayerService, PlayerService>();
-            services.AddTransient<IPlayerRepository, PlayerRepository>();
+            services.AddTransient<IFruitService, FruitService>();
+            services.AddTransient<IFruitRepository, FruitRepository>();
 
-            services.AddTransient<IPositionService, PositionService>();
-            services.AddTransient<IPositionRepository, PositionRepository>();
+            services.AddTransient<INutritionInfoService, NutritionInfoService>();
+            services.AddTransient<INutritionInfoRepository, NutritionInfoRepository>();
 
             // Add useful interface for accessing the ActionContext outside a controller.
             services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();

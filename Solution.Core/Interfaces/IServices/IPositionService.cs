@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace Solution.Core.Interfaces.IServices
 {
-    public interface IPositionService
+    public interface INutritionInfoService
     {
-        Task<ServiceResponse<List<Position>>> GetAllAsync();
+        Task<ServiceResponse<List<NutritionInfo>>> GetAllAsync();
     }
 }

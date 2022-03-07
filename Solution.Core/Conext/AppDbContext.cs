@@ -9,8 +9,8 @@ namespace Solution.Core.Conext
 {
     public class AppDbContext : DbContext
     {
-        public DbSet<Player> Players { get; set; }
-        public DbSet<Position> Positions { get; set; }
+        public DbSet<Fruit> Fruits { get; set; }
+        public DbSet<NutritionInfo> NutritionInfos { get; set; }
 
         public AppDbContext() : base()
         {
@@ -22,43 +22,43 @@ namespace Solution.Core.Conext
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(LocalDB)\\MSSQLLocalDB;Database=Players;Trusted_Connection=True");
+            optionsBuilder.UseSqlServer("Server=(LocalDB)\\MSSQLLocalDB;Database=Fruits;Trusted_Connection=True");
             optionsBuilder.UseLazyLoadingProxies();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Player>()
-                                      .HasOne(x => x.Position);
+            //modelBuilder.Entity<Fruit>()
+            //                          .HasOne(x => x.NutritionInfo);
 
-            modelBuilder.Entity<Position>()
-                                                   .HasData(new Position(1, "Spiker"));
-            modelBuilder.Entity<Position>()
-                                                   .HasData(new Position(2, "Setter"));
-            modelBuilder.Entity<Position>()
-                                                   .HasData(new Position(3, "Libero"));
-            modelBuilder.Entity<Position>()
-                                                   .HasData(new Position(4, "Opposite"));
-            modelBuilder.Entity<Position>()
-                                                   .HasData(new Position(5, "Center"));
+            //modelBuilder.Entity<NutritionInfo>()
+            //                                       .HasData(new NutritionInfo(1, "Spiker"));
+            //modelBuilder.Entity<NutritionInfo>()
+            //                                       .HasData(new NutritionInfo(2, "Setter"));
+            //modelBuilder.Entity<NutritionInfo>()
+            //                                       .HasData(new NutritionInfo(3, "Libero"));
+            //modelBuilder.Entity<NutritionInfo>()
+            //                                       .HasData(new NutritionInfo(4, "Opposite"));
+            //modelBuilder.Entity<NutritionInfo>()
+            //                                       .HasData(new NutritionInfo(5, "Center"));
 
-            List<Player> players = null;
+            //List<Fruit> Fruits = null;
 
-            using (FileStream fs = new FileStream("data.json", FileMode.Open, FileAccess.Read, FileShare.None))
-            {
-                using (StreamReader sr = new StreamReader(fs, Encoding.UTF8))
-                {
-                    string jsonData = sr.ReadToEnd();
+            //using (FileStream fs = new FileStream("data.json", FileMode.Open, FileAccess.Read, FileShare.None))
+            //{
+            //    using (StreamReader sr = new StreamReader(fs, Encoding.UTF8))
+            //    {
+            //        string jsonData = sr.ReadToEnd();
 
-                    players = JsonConvert.DeserializeObject<List<Player>>(jsonData);
+            //        Fruits = JsonConvert.DeserializeObject<List<Fruit>>(jsonData);
 
-                    foreach (Player player in players)
-                    {
-                        modelBuilder.Entity<Player>()
-                                                   .HasData(player);
-                    }
-                }
-            }
+            //        foreach (Fruit Fruit in Fruits)
+            //        {
+            //            modelBuilder.Entity<Fruit>()
+            //                                       .HasData(Fruit);
+            //        }
+            //    }
+            //}
         }
     }
 }

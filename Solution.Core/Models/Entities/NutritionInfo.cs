@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Solution.Core.Models.Entities
 {
-    [Table("Position")]
-    public class Position
+    [Table("NutritionInfo")]
+    public class NutritionInfo
     {
         [Required]
         [Key]
@@ -13,11 +13,11 @@ namespace Solution.Core.Models.Entities
         [Required]
         public string Name { get; set; }
 
-        public Position()
+        public NutritionInfo()
         {
         }
 
-        public Position(int id, string name)
+        public NutritionInfo(int id, string name)
         {
             Id = id;
             Name = name;
