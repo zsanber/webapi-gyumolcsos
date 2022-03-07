@@ -25,7 +25,7 @@ namespace Solution.WebAPI.Controller
         }
 
         [HttpGet]
-        [Route("/api/Fruit/get-all")]
+        [Route("/api/fruit/get-all")]
         [SwaggerOperation(OperationId = "getAll")]
         [Produces("application/json")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<Fruit>))]
@@ -43,7 +43,7 @@ namespace Solution.WebAPI.Controller
         }
 
         [HttpGet]
-        [Route("/api/Fruit/get/{id}")]
+        [Route("/api/fruit/get/{id}")]
         [SwaggerOperation(OperationId = "get")]
         [Produces("application/json")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(Fruit))]
@@ -61,7 +61,7 @@ namespace Solution.WebAPI.Controller
         }
 
         [HttpGet]
-        [Route("/api/Fruit/page/{page}")]
+        [Route("/api/fruit/page/{page}")]
         [SwaggerOperation(OperationId = "page")]
         [Produces("application/json")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<Fruit>))]
@@ -79,7 +79,7 @@ namespace Solution.WebAPI.Controller
         }
 
         [HttpDelete]
-        [Route("/api/Fruit/delete/{id}")]
+        [Route("/api/fruit/delete/{id}")]
         [SwaggerOperation(OperationId = "delete")]
         [Produces("application/json")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(bool))]
@@ -97,7 +97,7 @@ namespace Solution.WebAPI.Controller
         }
 
         [HttpPost]
-        [Route("/api/Fruit/create")]
+        [Route("/api/fruit/create")]
         [SwaggerOperation(OperationId = "create")]
         [Produces("application/json")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(Fruit))]
@@ -115,7 +115,7 @@ namespace Solution.WebAPI.Controller
         }
 
         [HttpPut]
-        [Route("/api/Fruit/update")]
+        [Route("/api/fruit/update")]
         [SwaggerOperation(OperationId = "update")]
         [Produces("application/json")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(Fruit))]

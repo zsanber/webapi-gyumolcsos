@@ -1,11 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
-using Solution.Core.Models.Entities;
 
 #nullable disable
 
 namespace Solution.Core.Migrations
 {
-    public partial class initial : Migration
+    public partial class tst : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +12,8 @@ namespace Solution.Core.Migrations
                 name: "NutritionInfo",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false).Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Amount = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TotalCalories = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Carbohydrate = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -29,7 +29,8 @@ namespace Solution.Core.Migrations
                 name: "Fruits",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false).Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     SourceUrl = table.Column<string>(type: "nvarchar(2048)", maxLength: 2048, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", maxLength: 4096, nullable: false),
@@ -46,11 +47,16 @@ namespace Solution.Core.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateIndex(
+                name: "IX_Fruits_NutritionInfoId",
+                table: "Fruits",
+                column: "NutritionInfoId");
+
             migrationBuilder.InsertData(
-                table: "NutritionInfo",
-                columns: new[] { "Id", "Amount", "TotalCalories", "Carbohydrate", "Protein", "Fat" },
-                values: new object[,]
-                {
+               table: "NutritionInfo",
+               columns: new[] { "Id", "Amount", "TotalCalories", "Carbohydrate", "Protein", "Fat" },
+               values: new object[,]
+               {
                     { 1, "100gr", "52cal",  "14gr",  "0.3gr",  "0.2gr" },
                     { 2, "100gr", "89cal",  "23gr",  "1.1gr", "0.3gr" },
                     { 3, "100gr", "50cal", "13gr",  "0.5gr", "0.1gr" },
@@ -60,7 +66,7 @@ namespace Solution.Core.Migrations
                     { 7, "100gr", "105cal", "14gr", "2.3gr", "1.7gr" },
                     { 8, "100gr", "75cal", "18gr",  "1.7gr", "0.7gr"},
                     { 9, "100gr", "68cal", "15.5gr", "2.7", "0.8gr"}
-                });
+               });
 
             migrationBuilder.InsertData(
                 table: "Fruits",
@@ -77,11 +83,6 @@ namespace Solution.Core.Migrations
                     {8, "Cherry", "https://upload.wikimedia.org/wikipedia/commons/f/f6/Cherry_season_%2848216568227%29.jpg", "A cherry is the fruit of many plants of the genus Prunus, and is a fleshy drupe (stone fruit).", 8 },
                     {9, "Watermelon", "https://upload.wikimedia.org/wikipedia/commons/4/47/Taiwan_2009_Tainan_City_Organic_Farm_Watermelon_FRD_7962.jpg", "Watermelon (Citrullus lanatus) is a flowering plant species of the Cucurbitaceae family and the name of its edible fruit. A scrambling and trailing vine-like plant, it is a highly cultivated fruit worldwide, with more than 1,000 varieties.", 9 },
                  });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Fruits_NutritionInfoId",
-                table: "Fruits",
-                column: "NutritionInfoId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

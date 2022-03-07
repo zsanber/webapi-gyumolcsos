@@ -22,7 +22,7 @@ namespace Solution.WebAPI.Controller
         }
 
         [HttpGet]
-        [Route("/api/postions/get-all")]
+        [Route("/api/nutritions/get-all")]
         [SwaggerOperation(OperationId = "getAll")]
         [Produces("application/json")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<NutritionInfo>))]
